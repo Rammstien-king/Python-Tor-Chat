@@ -19,7 +19,7 @@ How to run:
    look for line
    host = 'tpsyqgfdio25qxfakdksdyioq6u6bghipd3pcpboibwiowcvs3yv4gad.onion'  # Server's IP address
 
-   and channging start the tor browser and connect.
+   and after changing start the tor browser and connect.
 
 5) After set up on both client and server side run: server.py on server and client.py on client and start chatting
 6) Chat between server and client is encrypted. In server.py and client.py you can add new key.
@@ -28,6 +28,9 @@ How to run:
 
    The same secret key should be used in both client.py and server.py.
 7) additional requirement
+
    pip3 install PySocks
+
    pip3 install cryptography
+
    pip3 install threaded
