@@ -11,8 +11,8 @@ How to run:
 
    edit torrc file
 
-   HiddenServiceDir /var/lib/tor/my_website/
-   HiddenServicePort 80 127.0.0.1:80
+          HiddenServiceDir /var/lib/tor/my_website/
+          HiddenServicePort 80 127.0.0.1:80
 
    for more information about tor onion service vist : https://community.torproject.org/onion-services/setup/
 
@@ -22,7 +22,7 @@ How to run:
 
    look for line
 
-   host = 'tpsyqgfdio25qxfakdksdyioq6u6bghipd3pcpboibwiowcvs3yv4gad.onion'  # Server's IP address
+          host = 'tpsyqgfdio25qxfakdksdyioq6u6bghipd3pcpboibwiowcvs3yv4gad.onion'  # Server's IP address
 
    and after changing, start the tor browser and connect.
 
@@ -31,14 +31,14 @@ How to run:
 
    Look for line:
 
-   fernet = Fernet('KHBYrz6d77qr2D8sb4wiPF09qOFhuQVP7vht28I-ZRk=')
+          fernet = Fernet('KHBYrz6d77qr2D8sb4wiPF09qOFhuQVP7vht28I-ZRk=')
 
    The same secret key should be used in both client.py and server.py.
 
 6) additional requirement
 
-   pip3 install PySocks
+          pip3 install PySocks
 
-   pip3 install cryptography
+          pip3 install cryptography
 
-   pip3 install threaded
+          pip3 install threaded
