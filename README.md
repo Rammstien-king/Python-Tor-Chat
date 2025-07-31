@@ -1,5 +1,5 @@
 # Python-Tor-Chat
-Simple Python server-client script for chatting through tor network
+Simple Python server-client script with Meta AI support for chatting through tor network
 
 How to run:
 
