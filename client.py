@@ -2,8 +2,11 @@ import socket
 import socks
 from cryptography.fernet import Fernet
 import threading
+from meta_ai_api import MetaAI
 
-fernet = Fernet('KHBYrz6d77qr2D8sb4wiPF09qOFhuQVP7vht28I-ZRk=')
+
+api = MetaAI() #Meta AI object
+fernet = Fernet('KHBYrz6d77qr2D8sb4wiPF09qOFhuQVP7vht28I-ZRk=')  #encryption key
 
 class Style():
   RED = "\033[31m"
@@ -11,7 +14,7 @@ class Style():
   BLUE = "\033[34m"
   RESET = "\033[0m"
 
-def recv_client(client_socket,):
+def recv_client(client_socket,):  #recieve message
     while True:
         # Receive data from the client
         data = client_socket.recv(1024).decode()
@@ -21,13 +24,19 @@ def recv_client(client_socket,):
         print(f"{Style.RED}{decrypted_data}{Style.RESET}")
     
 
-def send_client(client_socket):
+def send_client(client_socket): #send message
     while True:
         # Send a response back to the client
         message = input()
-        client_socket.send(fernet.encrypt(message.encode()))
+        if message == "###":
+            client_socket.send(fernet.encrypt(message.encode()))
+            print("You have summoned AI. Ask:")
+            message = input()
+            client_socket.send(fernet.encrypt(message.encode()))
+        else:
+            client_socket.send(fernet.encrypt(message.encode()))
 
-def start_client():
+def start_client():  #start client
     
     #key = Fernet.generate_key()
 
